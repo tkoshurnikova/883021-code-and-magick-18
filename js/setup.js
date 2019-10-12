@@ -9,28 +9,20 @@ var getRandomItem = function (arr) {
   return arr[Math.round(Math.random() * (arr.length - 1))];
 };
 
-var wizards = [
-  {
-    name: getRandomItem(WIZARD_NAMES) + ' ' + getRandomItem(WIZARD_SURNAMES),
-    coatColor: getRandomItem(COAT_COLORS),
-    eyesColor: getRandomItem(EYES_COLORS)
-  },
-  {
-    name: getRandomItem(WIZARD_NAMES) + ' ' + getRandomItem(WIZARD_SURNAMES),
-    coatColor: getRandomItem(COAT_COLORS),
-    eyesColor: getRandomItem(EYES_COLORS)
-  },
-  {
-    name: getRandomItem(WIZARD_NAMES) + ' ' + getRandomItem(WIZARD_SURNAMES),
-    coatColor: getRandomItem(COAT_COLORS),
-    eyesColor: getRandomItem(EYES_COLORS)
-  },
-  {
-    name: getRandomItem(WIZARD_NAMES) + ' ' + getRandomItem(WIZARD_SURNAMES),
-    coatColor: getRandomItem(COAT_COLORS),
-    eyesColor: getRandomItem(EYES_COLORS)
+var renderWizardArray = function () {
+  var wizards = [];
+  for (var i = 0; i < 4; i++) {
+    var element = {
+      name: getRandomItem(WIZARD_NAMES) + ' ' + getRandomItem(WIZARD_SURNAMES),
+      coatColor: getRandomItem(COAT_COLORS),
+      eyesColor: getRandomItem(EYES_COLORS)
+    };
+    wizards.push(element);
   }
-];
+  return wizards;
+};
+
+var wizards = renderWizardArray();
 
 var userDialog = document.querySelector('.setup');
 userDialog.classList.remove('hidden');
